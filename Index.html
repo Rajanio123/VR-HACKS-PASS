@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VR HACKS - Instagram Password Hacking</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ff00;
+      font-family: monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #00ff00;
+      text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+      animation: glow 2s infinite alternate;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      color: #00ff00cc;
+      margin-bottom: 30px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    input, button {
+      padding: 12px;
+      margin: 10px;
+      font-size: 16px;
+      background: #111;
+      color: #00ff00;
+      border: 1px solid #00ff00;
+      border-radius: 5px;
+      width: 80%;
+      max-width: 300px;
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    button:hover {
+      background: #00ff00;
+      color: black;
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #00ff00;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      opacity: 0;
+      animation: none;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #00ff00;
+      }
+      to {
+        text-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes typewriter {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    .typewriter {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid #00ff00;
+      width: 0;
+      animation: typewriter 2s steps(30) forwards;
+    }
+  </style>
+</head>
+<body>
+  <h1>VR HACKS</h1>
+  <h2>Instagram Password Hacking</h2>
+
+  <input type="text" id="username" placeholder="Enter Instagram Username" />
+  <br>
+  <button onclick="hackPassword()">Hack Password</button>
+
+  <div id="result"></div>
+
+  <script>
+    function hackPassword() {
+      const username = document.getElementById('username').value.trim();
+      const result = document.getElementById('result');
+
+      if (!username) {
+        result.textContent = 'Please enter a username!';
+        result.style.opacity = '1';
+        result.style.animation = 'fadeIn 1s ease';
+        return;
+      }
+
+      result.innerHTML = '<span class="typewriter">Hacking Instagram account...</span>';
+      result.style.opacity = '1';
+
+      setTimeout(() => {
+        result.innerHTML = `<strong class="typewriter">Password for @${username}:</strong> <span class="typewriter">itz me</span>`;
+      }, 2500);
+    }
+  </script>
+</body>
+</html>
